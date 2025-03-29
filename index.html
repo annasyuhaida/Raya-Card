@@ -3,7 +3,7 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kad Raya</title>
+  <title>Birthday Card</title>
   <!-- Google Font-->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
   <!-- Stylesheet -->
@@ -27,8 +27,10 @@
     }
 
     .card {
-      width: 800px; /* Increase width */
-  height: 500px; /* Increase height */
+      width: 800px;
+      /* Increase width */
+      height: 500px;
+      /* Increase height */
       position: relative;
       margin-right: 300px;
       -webkit-perspective: 1200px;
@@ -96,41 +98,31 @@
       line-height: 120px;
     }
 
-    @media screen and (max-width: 768px) { /* Adjusts for tablets and smaller screens */
-  .card {
-    
-    width: 900px; /* Increase width */
-  height: 500px; /* Increase height */
-      position: relative;
-      margin-right: 300px;
-      -webkit-perspective: 1200px;
-      perspective: 1600px;
-      transition: 1s;
-  }
+    @media screen and (max-width: 768px) {
+      .card {
+        width: 90vw;
+        /* Adjust width to fit screen */
+        height: auto;
+        /* Maintain proportions */
+        aspect-ratio: 16 / 10;
+        margin-left: 170px;
+      }
 
-  .inside h1 {
-    font-size: 80px; /* Adjust emoji size */
-  }
+      .inside h1 {
+        font-size: 60px;
+        /* Scale text properly */
+      }
 
-  .inside p {
-    font-size: 14px; /* Adjust text size */
-  }
-}
+      .inside p {
+        font-size: 14px;
+      }
 
-@media screen and (max-width: 480px) { /* Adjusts for mobile phones */
-  .card {
-    width: 95%; /* Makes it take most of the screen */
-    height: 250px; /* Adjust height */
-  }
-
-  .inside h1 {
-    font-size: 60px; /* Adjust emoji size for smaller screens */
-  }
-
-  .inside p {
-    font-size: 12px; /* Make text readable on smaller screens */
-  }
-}
+      .inside,
+      .back {
+        background-size: contain;
+        /* Adjusts the image for small screens */
+      }
+    }
 
   </style>
 </head>
@@ -142,7 +134,7 @@
       <div class="back"></div>
     </div>
     <div class="inside">
-      
+
     </div>
   </div>
 
