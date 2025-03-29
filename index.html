@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Card</title>
+  <!-- Google Font-->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-image: url('bg.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      width: 800px; /* Increase width */
+  height: 500px; /* Increase height */
+      position: relative;
+      margin-right: 300px;
+      -webkit-perspective: 1200px;
+      perspective: 1600px;
+      transition: 1s;
+    }
+
+    .card.open .outside {
+      transform: rotateY(-130deg);
+    }
+
+    .outside,
+    .inside {
+      height: 100%;
+      width: 50%;
+      position: absolute;
+      left: 50.1%;
+    }
+
+    .inside {
+      background-image: url('wish.png');
+      line-height: 3;
+      padding: 0 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      left: 50%;
+    }
+
+    .outside {
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      z-index: 1;
+      transform-origin: left;
+      transition: 2s;
+      cursor: pointer;
+    }
+
+    .front,
+    .back {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: rotateX(0deg);
+    }
+
+    .front {
+      background-image: url('wish raya.png');
+      /* Replace with your image file */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .back {
+      transform: rotateY(180deg);
+      background-image: url('kuih.png');
+    }
+
+    .inside h1 {
+      font-size: 120px;
+      line-height: 120px;
+    }
+
+    @media screen and (max-width: 768px) { /* Adjusts for tablets and smaller screens */
+  .card {
+    
+    width: 900px; /* Increase width */
+  height: 500px; /* Increase height */
+      position: relative;
+      margin-right: 300px;
+      -webkit-perspective: 1200px;
+      perspective: 1600px;
+      transition: 1s;
+  }
+
+  .inside h1 {
+    font-size: 80px; /* Adjust emoji size */
+  }
+
+  .inside p {
+    font-size: 14px; /* Adjust text size */
+  }
+}
+
+@media screen and (max-width: 480px) { /* Adjusts for mobile phones */
+  .card {
+    width: 95%; /* Makes it take most of the screen */
+    height: 250px; /* Adjust height */
+  }
+
+  .inside h1 {
+    font-size: 60px; /* Adjust emoji size for smaller screens */
+  }
+
+  .inside p {
+    font-size: 12px; /* Make text readable on smaller screens */
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="card" onclick="toggleCard()">
+    <div class="outside">
+      <div class="front"></div>
+      <div class="back"></div>
+    </div>
+    <div class="inside">
+      
+    </div>
+  </div>
+
+  <script>
+    function toggleCard() {
+      document.querySelector('.card').classList.toggle('open');
+    }
+  </script>
+</body>
+
+</html>
